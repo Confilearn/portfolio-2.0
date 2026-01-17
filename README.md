@@ -16,4 +16,4 @@ A modern portfolio landing page built with React and Motion. Features smooth ani
 4. Run development server: `npm run dev`
 5. Open `http://localhost:5173` in your browser
 
-[**Credit Pedrotech ❤️**](https://github.com/machadop1407)
+[**Credit Pedrotech**](https://github.com/machadop1407) ❤️

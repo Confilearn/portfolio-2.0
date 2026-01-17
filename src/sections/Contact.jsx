@@ -9,6 +9,7 @@ import {
 import { Button } from "@/components/Button";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { config } from "../config";
 
 const contactInfo = [
   {
@@ -49,9 +50,9 @@ export const Contact = () => {
     setIsLoading(true);
     setSubmitStatus({ type: null, message: "" });
     try {
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+      const serviceId = config.emailJsServiceId;
+      const templateId = config.emailJsTemplateId;
+      const publicKey = config.emailJsPublicKey;
 
       if (!serviceId || !templateId || !publicKey) {
         throw new Error(
