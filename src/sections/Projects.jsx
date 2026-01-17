@@ -1,45 +1,66 @@
+import { useState } from "react";
 import { ArrowUpRight, Github } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 const projects = [
   {
-    title: "Fintech Dashboard",
+    title: "TopupAfrica",
     description:
-      "A comprehensive financial analytics platform with real-time data visualization, portfolio management, and AI-powered insights.",
-    image: "/projects/project1.png",
-    tags: ["React", "Typescript", "NodeJS"],
-    link: "#",
-    github: "#",
+      "A VTU platform that enables users to purchase airtime, data bundles, and pay utility bills quickly and securely. Includes user wallets, transaction history, and third-party payment integrations.",
+    image: "/projects/topup.png",
+    tags: [
+      "React",
+      "Tailwindcss",
+      "Shadcn",
+      "Git",
+      "NodeJs",
+      "Express",
+      "MongoDB",
+      "Monnify",
+    ],
+    link: "https://topupafrica.online/",
+    github: "https://github.com/Confilearn/topup-africa.git",
   },
   {
-    title: "E-Commerce Platform",
+    title: "Instapay",
     description:
-      "A full-featured e-commerce solution with inventory management, payment processing, and analytics dashboard.",
-    image: "/projects/project2.png",
-    tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
-    link: "#",
-    github: "#",
+      "A web application that allows users to earn rewards by inviting friends and sharing referral links across various platforms.",
+    image: "/projects/instapay.png",
+    tags: [
+      "React",
+      "Shadcn",
+      "Tailwindcss",
+      "NodeJs",
+      "Express",
+      "MongoDB",
+      "Git",
+    ],
+    link: "https://instapayjobs.com/",
+    github: "https://github.com/Confilearn/instapay.git",
   },
   {
-    title: "AI Writing Assistant",
+    title: "SocialPilot",
     description:
-      "An intelligent writing tool powered by GPT-4, helping users create better content faster.",
-    image: "/projects/project3.png",
-    tags: ["React", "OpenAI", "Python", "FastAPI"],
-    link: "#",
-    github: "#",
+      "A platform where users earn money online by performing simple tasks such as following social media accounts, liking and commenting on posts, and more.",
+    image: "/projects/socialpilot.png",
+    tags: ["React", "Tailwindcss", "Firebase", "Git"],
+    link: "https://social-pilot-web.vercel.app/",
+    github: "https://github.com/Confilearn/social-pilot-web.git",
   },
   {
-    title: "Project Management Tool",
+    title: "O1C",
     description:
-      "A collaborative workspace for teams with real-time updates, task tracking, and integrations.",
-    image: "/projects/project4.png",
-    tags: ["Next.js", "Socket.io", "MongoDB", "Redis"],
-    link: "#",
-    github: "#",
+      "A modern landing page designed for a trader to showcase mentorship programs and signal services to potential clients.",
+    image: "/projects/o1c.png",
+    tags: ["React", "Tailwindcss", "Git"],
+    link: "https://o1c-web.vercel.app/",
+    github: "https://github.com/Confilearn/o1c-web.git",
   },
 ];
 
 export const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+  const displayedProjects = showAll ? projects : projects.slice(0, 4);
+
   return (
     <section id="projects" className="py-32 relative overflow-hidden">
       {/* Bg glows */}
@@ -66,7 +87,7 @@ export const Projects = () => {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, idx) => (
+          {displayedProjects.map((project, idx) => (
             <div
               key={idx}
               className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
@@ -81,19 +102,23 @@ export const Projects = () => {
                 />
                 <div
                   className="absolute inset-0 
-                bg-gradient-to-t from-card via-card/50
+                bg-linear-to-t from-card via-card/50
                  to-transparent opacity-60"
                 />
                 {/* Overlay Links */}
                 <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a
                     href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
                   >
                     <ArrowUpRight className="w-5 h-5" />
                   </a>
                   <a
                     href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
                   >
                     <Github className="w-5 h-5" />
@@ -134,10 +159,12 @@ export const Projects = () => {
 
         {/* View All CTA */}
         <div className="text-center mt-12 animate-fade-in animation-delay-500">
-          <AnimatedBorderButton>
-            View All Projects
-            <ArrowUpRight className="w-5 h-5" />
-          </AnimatedBorderButton>
+          <button onClick={() => setShowAll(!showAll)}>
+            <AnimatedBorderButton>
+              {showAll ? "Show Less Projects" : "View All Projects"}
+              <ArrowUpRight className="w-5 h-5" />
+            </AnimatedBorderButton>
+          </button>
         </div>
       </div>
     </section>

@@ -1,9 +1,10 @@
 import { Github, Linkedin, Twitter, Heart } from "lucide-react";
+import { config } from "../config";
 
 const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Github, href: config.githubLink, label: "GitHub" },
+  { icon: Linkedin, href: config.linkedinLink, label: "LinkedIn" },
+  { icon: Twitter, href: config.twitterLink, label: "Twitter" },
 ];
 
 const footerLinks = [
@@ -50,6 +51,8 @@ export const Footer = () => {
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"
               >
                 <social.icon className="w-5 h-5" />

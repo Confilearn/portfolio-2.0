@@ -40,7 +40,7 @@ export const About = () => {
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
-              Building the future,
+              Building the future,{" "}
               <span className="font-serif italic font-normal text-white">
                 one component at a time.
               </span>
@@ -48,17 +48,16 @@ export const About = () => {
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                I'm a passionate software engineer with over 2 years of
-                experience crafting digital products that make a difference. My
-                journey started with a curiosity for how things work on the web,
-                and it has evolved into a deep expertise in modern frontend
-                technologies.
+                I'm an Innovative and deadline-driven Developer with 2+ years of
+                experience researching and developing solutions that meet client
+                and users satisfaction using the easiest, yet effective approach
+                possible.
               </p>
               <p>
-                I specialize in React, Next.js, and TypeScript, building
-                everything from sleek landing pages to complex enterprise
-                applications. My approach combines technical excellence with a
-                keen eye for design and user experience.
+                I specialize in web development using MERN stack technologies
+                together with React Native for mobile app development. My
+                approach combines technical excellence with a keen eye for
+                design and user experience.
               </p>
               <p>
                 When I'm not coding, you'll find me exploring new technologies,
