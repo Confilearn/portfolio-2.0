@@ -26,6 +26,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 
   button {
@@ -36,6 +41,9 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .font-serif {
@@ -48,11 +56,15 @@
     background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
     backdrop-filter: blur(16px);
     border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+    transform: translateZ(0);
+    will-change: backdrop-filter;
   }
 
   .glass-strong {
     background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
     backdrop-filter: blur(24px);
+    transform: translateZ(0);
+    will-change: backdrop-filter;
     /* border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent); */
   }
 
@@ -62,8 +74,8 @@
   }
 
   .glow-border {
-    box-shadow: 0 0 20px
-        color-mix(in srgb, var(--color-primary) 20%, transparent),
+    box-shadow:
+      0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
       inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
   }
 }
@@ -119,14 +131,17 @@
 
   .animate-fade-in {
     animation: fade-in 0.8s ease-out both;
+    transform: translateZ(0);
   }
 
   .animate-float {
     animation: float 4s ease-in-out infinite;
+    transform: translateZ(0);
   }
 
   .animate-marquee {
     animation: marquee 30s linear infinite;
+    transform: translateZ(0);
   }
 
   .animation-delay-100 {
@@ -177,8 +192,23 @@
   }
 
   .timeline-glow {
-    box-shadow: 0 0 40px
-        color-mix(in srgb, var(--color-primary) 35%, transparent),
+    box-shadow:
+      0 0 40px color-mix(in srgb, var(--color-primary) 35%, transparent),
       0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  }
+
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .gpu-accelerated-fixed {
+    transform: translateZ(0);
+    will-change: transform, backdrop-filter;
+  }
+
+  .smooth-scroll {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
   }
 }

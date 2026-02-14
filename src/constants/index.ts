@@ -3,7 +3,7 @@ export const projects = [
     title: "Stase",
     description:
       "A sleek and minimalist fintech application designed for seamless financial management. Features instant P2P transfers, secure deposit and withdrawal operations, and real-time currency conversion across USD, GBP, EUR, and CAD. Built with a focus on user experience and transaction efficiency.",
-    image: "/projects/stase-2.png",
+    image: "/projects/stase.png",
     tags: [
       "Expo",
       "Nativewind",
